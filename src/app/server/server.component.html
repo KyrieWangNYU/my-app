@@ -5,8 +5,19 @@
       <span>Enter Your Ingredient: </span>
       <input type="text" [(ngModel)]="ingredient">
     </div>
-    <button class="add" (click)="search()">Add</button>
+    <button class="add" (click) = "add()">Add</button>
+    <button class="check" (click)="check()">Check</button>
     <button class="reset" (click)="reset()">Reset</button>
+
+    <div>
+      <span> Added ingredient(s):</span>
+      <div *ngFor="let item of added">
+        <div><span>{{item}}</span></div>
+      </div>
+
+    </div>
+
     <div *ngIf="found"> Available Dish: {{ dishName }}</div>
+    <div *ngIf="empty"> No ingredient entered</div>
   </div>
 </div>
