@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Dish } from '../../shared/dish.model';
-import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-server',
