@@ -1,23 +1,27 @@
 <div class="container">
   <h1>Cooking Suggestions</h1>
   <div class="main">
-    <div>
+    <div class="input">
       <span>Enter Your Ingredient: </span>
       <input type="text" [(ngModel)]="ingredient">
     </div>
-    <button class="add" (click) = "add()">Add</button>
-    <button class="check" (click)="check()">Check</button>
-    <button class="reset" (click)="reset()">Reset</button>
+
+    <div class="buttons">
+      <button class="add" (click) = "add()">Add</button>
+      <button class="check" (click)="check()">Check</button>
+      <button class="reset" (click)="reset()">Reset</button>
+    </div>
 
     <div>
-      <span> Added ingredient(s):</span>
+      <span class="ingredients"> Added ingredient(s):</span>
       <div *ngFor="let item of added">
-        <div><span>{{item}}</span></div>
+        <div class="item"><span>{{item}}</span></div>
       </div>
 
     </div>
 
-    <div *ngIf="found"> Available Dish: {{ dishName }}</div>
-    <div *ngIf="empty"> No ingredient entered</div>
+    <div *ngIf="found" class="result"> Available Dish: {{ dishName }}</div>
+    <div *ngIf="empty" class="empty"> No ingredient entered</div>
   </div>
 </div>
+
